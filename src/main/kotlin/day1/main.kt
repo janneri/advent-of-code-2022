@@ -5,6 +5,7 @@ import java.io.File
 
 data class Reindeer(val sums: List<Int>)
 
+// The imperative version of parsing:
 fun parseReindeers(lines: List<String>): List<Reindeer> {
     var nums = mutableListOf<Int>()
     val reindeers = mutableListOf<Reindeer>()
@@ -23,6 +24,7 @@ fun parseReindeers(lines: List<String>): List<Reindeer> {
     return reindeers
 }
 
+// The functional version of parsing:
 fun parseReindeersFold(ints: List<Int?>): MutableList<Int> {
     return ints.fold(mutableListOf(0)) { acc, num ->
         if (num != null) {

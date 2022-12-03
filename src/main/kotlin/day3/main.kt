@@ -2,9 +2,9 @@ package day3
 
 import util.readTestInput
 
-data class Rucksack(val part1: CharArray, val part2: CharArray) {
-    fun getDuplicate(): Char {
-       return part1.find { part2.contains(it) }!!
+data class Rucksack(val part1Chars: CharArray, val part2Chars: CharArray) {
+    fun getDuplicateChar(): Char {
+       return part1Chars.find { part2Chars.contains(it) }!!
     }
 
     companion object {
@@ -15,14 +15,14 @@ data class Rucksack(val part1: CharArray, val part2: CharArray) {
     }
 }
 
-fun getCharPrio(char: Char): Int {
+fun getPrioOfChar(char: Char): Int {
     return if (char.isUpperCase()) char.code - 38 else char.code - 96
 }
 
 fun part1(inputLines: List<String>): Int {
     return inputLines
         .map { Rucksack.parse(it) }
-        .map { getCharPrio(it.getDuplicate()) }
+        .map { getPrioOfChar(it.getDuplicateChar()) }
         .sum()
 }
 
@@ -30,12 +30,14 @@ fun part1(inputLines: List<String>): Int {
 fun findCommonChar(group: List<String>): Char {
     val charArrays = group.map { it.toCharArray() }
     return charArrays[0].find { group[1].contains(it) && group[2].contains(it) }!!
+    //     charArrays[0].find { char -> group.drop(1).all { it.contains(char) } }!!
+    // The commented versio would be more generic, but I think the not generic version is more readable
 }
 
 fun part2(inputLines: List<String>): Int {
     return inputLines.chunked(3)
         .map { findCommonChar(it) }
-        .map { getCharPrio(it) }
+        .map { getPrioOfChar(it) }
         .sum()
 }
 

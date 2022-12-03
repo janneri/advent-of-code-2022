@@ -23,13 +23,3 @@ fun readTestInput(dayDir: String): List<String> {
     return File("src/main/kotlin/$dayDir/testinput.txt").readLines()
 }
 
-// 1-3 a: abcde
-private val regex = Regex("""(\d+)-(\d+) ([a-z]): ([a-z]+)""")
-fun parseUsingRegex(line: String): RegexData =
-    regex.matchEntire(line)!!
-        .destructured
-        .let { (start, end, letter, password) ->
-            RegexData(password, start.toInt(), end.toInt(), letter.single())
-        }
-
-data class RegexData(val str: String, val start: Int, val end: Int, val letter: Char)

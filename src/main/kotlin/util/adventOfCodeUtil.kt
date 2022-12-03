@@ -13,7 +13,7 @@ fun createDay(dayNum: Int) {
     Files.writeString(mainFile.toPath(), """
         package day$dayNum
         
-        import util.readLines
+        import util.readTestInput
         
         fun part1(inputLines: List<String>): String {
             return "todo"
@@ -24,7 +24,7 @@ fun createDay(dayNum: Int) {
         }
         
         fun main() {
-            val inputLines = readLines("src/main/kotlin/day$dayNum/testinput.txt")
+            val inputLines = readTestInput("day$dayNum")
             println(part1(inputLines))
             println(part2(inputLines))
         }
@@ -33,5 +33,5 @@ fun createDay(dayNum: Int) {
 }
 
 fun main() {
-    createDay(3)
+    createDay(4)
 }
