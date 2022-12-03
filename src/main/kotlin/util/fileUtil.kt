@@ -15,11 +15,13 @@ fun readNullableInts(filePath: String): List<Int?> {
 }
 
 
-fun readLines(filePath: String): List<String> {
-    return File(filePath)
-        .readLines()
+fun readInput(dayDir: String): List<String> {
+    return File("src/main/kotlin/$dayDir/input.txt").readLines()
 }
 
+fun readTestInput(dayDir: String): List<String> {
+    return File("src/main/kotlin/$dayDir/testinput.txt").readLines()
+}
 
 // 1-3 a: abcde
 private val regex = Regex("""(\d+)-(\d+) ([a-z]): ([a-z]+)""")

@@ -15,11 +15,11 @@ fun createDay(dayNum: Int) {
         
         import util.readLines
         
-        fun part1(input: List<String>): String {
+        fun part1(inputLines: List<String>): String {
             return "todo"
         }
         
-        fun part2(input: List<String>): String {
+        fun part2(inputLines: List<String>): String {
             return "todo"
         }
         
@@ -33,5 +33,5 @@ fun createDay(dayNum: Int) {
 }
 
 fun main() {
-    createDay(2)
+    createDay(3)
 }
