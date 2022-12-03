@@ -14,7 +14,6 @@ fun readNullableInts(filePath: String): List<Int?> {
         .map { if (it.isBlank()) null else it.toInt() }
 }
 
-
 fun readInput(dayDir: String): List<String> {
     return File("src/main/kotlin/$dayDir/input.txt").readLines()
 }
