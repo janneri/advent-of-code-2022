@@ -2,6 +2,7 @@ package util
 
 import java.nio.file.Files
 import java.nio.file.Path
+import java.time.LocalDate
 
 
 fun createDay(dayNum: Int) {
@@ -36,5 +37,5 @@ fun createDay(dayNum: Int) {
 }
 
 fun main() {
-    createDay(4)
+    createDay(LocalDate.now().dayOfMonth)
 }
