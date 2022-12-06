@@ -5,33 +5,54 @@ import util.readTestInput
 data class Crate(val symbol: Char, val stackNumber: Int)
 data class Move(val count: Int, val fromStack: Int, val toStack: Int)
 
-// String is for instance "move 1 from 2 to 1"
-private val moveRegex = Regex("""move (\d+) from (\d+) to (\d+)""")
-fun parseMove(line: String): Move =
-    moveRegex.matchEntire(line)!!
-        .destructured
-        .let { (count, fromStack, toStack) ->
-            Move(count.toInt(), fromStack.toInt(), toStack.toInt())
+data class GameInput(val moves: List<Move>, val crates: List<Crate>, val stackCount: Int) {
+    companion object {
+        /*
+            Input looks something like this:
+                [D]
+            [N] [C]
+            [Z] [M] [P]
+             1   2   3
+
+            move 1 from 2 to 1
+            move 3 from 1 to 3
+         */
+        fun parse(inputLines: List<String>): GameInput {
+            val moves = inputLines.takeLastWhile { it.isNotBlank() }.map { parseMove(it) }
+            val linesBeforeBlank = inputLines.takeWhile { it.isNotBlank() }
+            val stackCount = linesBeforeBlank.last().trim().last().digitToInt()
+            val crates = linesBeforeBlank.dropLast(1).map { parseCrates(it, stackCount) }.flatten()
+
+            return GameInput(moves, crates, stackCount)
         }
 
-// Parses a line such as "[Z] [M] [P]"
-fun parseCrates(line: String, numberOfStacks: Int): List<Crate> {
-    val crates = mutableListOf<Crate>()
-    var currentCharIndex = 1 // first letter is at pos 1
-    for (stackNumber in 1 .. numberOfStacks) {
-        if (currentCharIndex < line.length && line[currentCharIndex].toString().isNotBlank()) {
-            crates.add(Crate(line[currentCharIndex], stackNumber))
+        private val moveRegex = Regex("""move (\d+) from (\d+) to (\d+)""")
+        fun parseMove(line: String): Move =
+            moveRegex.matchEntire(line)!!
+                .destructured
+                .let { (count, fromStack, toStack) ->
+                    Move(count.toInt(), fromStack.toInt(), toStack.toInt())
+                }
+
+        // Parses a line such as "[Z] [M] [P]"
+        fun parseCrates(line: String, numberOfStacks: Int): List<Crate> {
+            val crates = mutableListOf<Crate>()
+            var currentCharIndex = 1 // first letter is at pos 1
+            for (stackNumber in 1 .. numberOfStacks) {
+                if (currentCharIndex < line.length && line[currentCharIndex].toString().isNotBlank()) {
+                    crates.add(Crate(line[currentCharIndex], stackNumber))
+                }
+                currentCharIndex += 4 // there's a gap of 4 between each letter
+            }
+            return crates
         }
-        currentCharIndex += 4 // there's a gap of 4 between each letter
     }
-    return crates
 }
 
-fun playMoves(crateLines: List<String>, moveLines: List<String>, oneAtATimeMode: Boolean, stackCount: Int): String {
-    val moves = moveLines.map { parseMove(it) }
-    var stacks = crateLines.map { parseCrates(it, stackCount) }.flatten().groupBy { it.stackNumber }.toMutableMap()
+fun playMoves(gameInput: GameInput, oneAtATimeMode: Boolean): String {
+    val stacks = gameInput.crates.groupBy { it.stackNumber }.toMutableMap()
 
-    moves.forEach {move ->
+    gameInput.moves.forEach {move ->
         val cratesToMove = stacks[move.fromStack]!!.take(move.count)
         stacks[move.fromStack] = stacks[move.fromStack]!!.drop(move.count)
         val cratesToInsert = if (oneAtATimeMode) cratesToMove.reversed() else cratesToMove
@@ -43,26 +64,20 @@ fun playMoves(crateLines: List<String>, moveLines: List<String>, oneAtATimeMode:
     }
 }
 
-fun part1(crateLines: List<String>, moveLines: List<String>, stackCount: Int): String {
-    return playMoves(crateLines, moveLines, true, stackCount)
+fun part1(gameInput: GameInput): String {
+    return playMoves(gameInput, true)
 }
 
-fun part2(crateLines: List<String>, moveLines: List<String>, stackCount: Int): String {
-    return playMoves(crateLines, moveLines, false, stackCount)
+fun part2(gameInput: GameInput): String {
+    return playMoves(gameInput, false)
 }
 
 fun main() {
     // Solution for https://adventofcode.com/2022/day/5
     // Downloaded the input from https://adventofcode.com/2022/day/5/input
 
-    val inputLines = readTestInput("day5")
+    val gameInput = GameInput.parse(readTestInput("day5"))
 
-    val linesBeforeBlank = inputLines.takeWhile { it.isNotBlank() }
-    val stackNumberLine = linesBeforeBlank.last()
-    val stackCount = stackNumberLine.trim().last().digitToInt()
-    val crateLines = linesBeforeBlank.dropLast(1)
-    val moveLines = inputLines.takeLastWhile { it.isNotBlank() }
-
-    println(part1(crateLines, moveLines, stackCount))
-    println(part2(crateLines, moveLines, stackCount))
+    println(part1(gameInput))
+    println(part2(gameInput))
 }
