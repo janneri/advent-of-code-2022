@@ -64,20 +64,12 @@ fun playMoves(gameInput: GameInput, oneAtATimeMode: Boolean): String {
     }
 }
 
-fun part1(gameInput: GameInput): String {
-    return playMoves(gameInput, true)
-}
-
-fun part2(gameInput: GameInput): String {
-    return playMoves(gameInput, false)
-}
-
 fun main() {
     // Solution for https://adventofcode.com/2022/day/5
     // Downloaded the input from https://adventofcode.com/2022/day/5/input
 
     val gameInput = GameInput.parse(readTestInput("day5"))
 
-    println(part1(gameInput))
-    println(part2(gameInput))
+    println(playMoves(gameInput, true)) // part1
+    println(playMoves(gameInput, false)) // part2
 }
