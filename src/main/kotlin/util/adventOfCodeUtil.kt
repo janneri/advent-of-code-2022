@@ -16,12 +16,12 @@ fun createDay(dayNum: Int) {
         
         import util.readTestInput
         
-        fun part1(inputLines: List<String>): String {
-            return "todo"
+        fun part1(inputLines: List<String>): Int {
+            return 0
         }
         
-        fun part2(inputLines: List<String>): String {
-            return "todo"
+        fun part2(inputLines: List<String>): Int {
+            return 0
         }
         
         fun main() {
