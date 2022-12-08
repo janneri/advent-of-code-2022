@@ -28,7 +28,7 @@ Contains my Kotlin solutions for Advent of Code 2022.
 | [Day 5 - supply stacks](https://adventofcode.com/2022/day/5)           | [Day 5 solution](src/main/kotlin/day5/main.kt)   | Input was stacks and moves. Move elements from a stack to another based on moves.    |
 | [Day 6 - tuning trouble](https://adventofcode.com/2022/day/6)          | [Day 6 solution](src/main/kotlin/day6/main.kt)   | In a string, find a sequence of 4 letters without duplicates.                        |
 | [Day 7 - no space left on device](https://adventofcode.com/2022/day/7) | [Day 7 solution](src/main/kotlin/day7/main.kt)   | Crawl a directory tree and analyze directory sizes.                                  |
-| [Day 8 - todo](https://adventofcode.com/2022/day/8)                    | [Day 8 solution](src/main/kotlin/day8/main.kt)   | TODO                                                                                 |
+| [Day 8 - treetop tree house](https://adventofcode.com/2022/day/8)      | [Day 8 solution](src/main/kotlin/day8/main.kt)   | Move left, right, up, down and count values in grid (or tree heights in a forest).   |
 | [Day 9 - todo](https://adventofcode.com/2022/day/9)                    | [Day 9 solution](src/main/kotlin/day9/main.kt)   | TODO                                                                                 |
 | [Day 10 - todo](https://adventofcode.com/2022/day/10)                  | [Day 10 solution](src/main/kotlin/day10/main.kt) | TODO                                                                                 |
 | [Day 11 - todo](https://adventofcode.com/2022/day/11)                  | [Day 11 solution](src/main/kotlin/day11/main.kt) | TODO                                                                                 |
