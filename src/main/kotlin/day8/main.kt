@@ -23,10 +23,6 @@ class Grid(val rows: List<String>) {
     fun isEqual(coord: Coord, coord2: Coord): Boolean = valueAt(coord) == valueAt(coord2)
     fun isBigger(coord: Coord, coord2: Coord): Boolean = valueAt(coord) > valueAt(coord2)
 
-    fun move(coord: Coord, dx: Int, dy: Int): Coord {
-        return Coord(coord.x + dx, coord.y + dy)
-    }
-
     fun isVisibleToAnyDirection(coord: Coord): Boolean {
         fun isVisibleTowards(dir: Direction): Boolean =
             IntRange(1, max(width, height))
