@@ -1,24 +1,5 @@
 # Advent of Code 2022
 
-Contains my Kotlin solutions for Advent of Code 2022.
-
-## Directory structure
-```
-.
-├── README.md               README file
-└── src/main/kotlin
-    ├── util             Utils for reading the input files etc
-    ├── day1
-        ├── main.kt      An optional Day 01 test input data used for checks
-        ├── input.txt    Input is gitignored as requested. Download from AoC-website.
-    ├── day2
-        ├── main.kt      An optional Day 01 test input data used for checks
-        ├── input.txt    Input is gitignored. Download from AoC-website.
-    ├── dayN             ...
-```
-
-## Puzzles and solutions
-
 | Puzzle                                                                 | Solution                                         | Themes                                                                               |
 |------------------------------------------------------------------------|--------------------------------------------------|--------------------------------------------------------------------------------------|
 | [Day 1 - calory counting](https://adventofcode.com/2022/day/1)         | [Day 1 solution](src/main/kotlin/day1/main.kt)   | Group nums. Sum and find groups with max sum.                                        |
