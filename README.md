@@ -11,7 +11,7 @@
 | [Day 7 - no space left on device](https://adventofcode.com/2022/day/7) | [Day 7 solution](src/main/kotlin/day7/main.kt)   | Crawl a directory tree and analyze directory sizes.                                  |
 | [Day 8 - treetop tree house](https://adventofcode.com/2022/day/8)      | [Day 8 solution](src/main/kotlin/day8/main.kt)   | Move left, right, up, down and count values in grid (or tree heights in a forest).   |
 | [Day 9 - rope bridge](https://adventofcode.com/2022/day/9)             | [Day 9 solution](src/main/kotlin/day9/main.kt)   | Move around a grid. Model rope knots that follow each other.                         |
-| [Day 10 - todo](https://adventofcode.com/2022/day/10)                  | [Day 10 solution](src/main/kotlin/day10/main.kt) | TODO                                                                                 |
+| [Day 10 - cathode-ray tube](https://adventofcode.com/2022/day/10)      | [Day 10 solution](src/main/kotlin/day10/main.kt) | Parse and execute commands, which update a register value with a delay. Draw grids.  |
 | [Day 11 - todo](https://adventofcode.com/2022/day/11)                  | [Day 11 solution](src/main/kotlin/day11/main.kt) | TODO                                                                                 |
 | [Day 12 - todo](https://adventofcode.com/2022/day/12)                  | [Day 10 solution](src/main/kotlin/day12/main.kt) | TODO                                                                                 |
 | [Day 13 - todo](https://adventofcode.com/2022/day/13)                  | [Day 10 solution](src/main/kotlin/day13/main.kt) | TODO                                                                                 |
