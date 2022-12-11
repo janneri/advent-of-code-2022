@@ -25,9 +25,6 @@ fun createDay(dayNum: Int) {
         }
         
         fun main() {
-            // Solution for https://adventofcode.com/2022/day/$dayNum
-            // Downloaded the input from https://adventofcode.com/2022/day/$dayNum/input
-            
             val inputLines = readTestInput("day$dayNum")
             println(part1(inputLines))
             println(part2(inputLines))
