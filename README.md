@@ -12,7 +12,7 @@
 | [Day 8 - treetop tree house](https://adventofcode.com/2022/day/8)      | [Day 8 solution](src/main/kotlin/day8/main.kt)   | Move left, right, up, down and count values in grid (or tree heights in a forest).   |
 | [Day 9 - rope bridge](https://adventofcode.com/2022/day/9)             | [Day 9 solution](src/main/kotlin/day9/main.kt)   | Move around a grid. Model rope knots that follow each other.                         |
 | [Day 10 - cathode-ray tube](https://adventofcode.com/2022/day/10)      | [Day 10 solution](src/main/kotlin/day10/main.kt) | Parse and execute commands, which update a register value with a delay. Draw grids.  |
-| [Day 11 - todo](https://adventofcode.com/2022/day/11)                  | [Day 11 solution](src/main/kotlin/day11/main.kt) | TODO                                                                                 |
+| [Day 11 - monkey in the middle](https://adventofcode.com/2022/day/11)  | [Day 11 solution](src/main/kotlin/day11/main.kt) | Play a monkey game. Crazy math to avoid number overflow.                             |
 | [Day 12 - todo](https://adventofcode.com/2022/day/12)                  | [Day 10 solution](src/main/kotlin/day12/main.kt) | TODO                                                                                 |
 | [Day 13 - todo](https://adventofcode.com/2022/day/13)                  | [Day 10 solution](src/main/kotlin/day13/main.kt) | TODO                                                                                 |
 | [Day 14 - todo](https://adventofcode.com/2022/day/14)                  | [Day 10 solution](src/main/kotlin/day14/main.kt) | TODO                                                                                 |
