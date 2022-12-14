@@ -1,13 +1,10 @@
 package day13
 
-import util.readTestInput
+import util.*
 
 data class PacketPair(val left: Packet, val right: Packet)
 
 open class Packet
-data class EmptyValue(val value: Int? = null): Packet() {
-    override fun toString(): String = "Empty"
-}
 data class IntValue(val value: Int): Packet() {
     override fun toString(): String = value.toString()
 }
@@ -15,6 +12,8 @@ data class ListValue(val values: List<Packet>): Packet() {
     constructor(value: Packet): this(listOf(value))
     override fun toString(): String = "[${values.joinToString(";")}]"
 }
+
+fun isEmptyList(packet: Packet): Boolean = packet is ListValue && packet.values.isEmpty()
 
 fun readListItems(str: String): List<String> {
     var level = 1
@@ -42,10 +41,11 @@ fun readListItems(str: String): List<String> {
 
 fun parsePacket(str: String): Packet {
     return when {
-        str.isBlank() -> EmptyValue()
+        str.isBlank() -> throw IllegalArgumentException("Got blank")
+        str == "[]" -> ListValue(emptyList())
         str.startsWith("[") -> {
             val values = readListItems(str).map { parsePacket(it) }
-            if (values.isEmpty()) ListValue(listOf(EmptyValue())) else ListValue(values)
+            if (values.isEmpty()) ListValue(emptyList()) else ListValue(values)
         }
         else -> IntValue(str.toInt())
     }
@@ -58,14 +58,14 @@ fun compareTo(packetPair: PacketPair, level: Int = 0): Int {
         for (i in 0 until packetPair.left.values.size) {
             val leftValue = packetPair.left.values.get(i)
             val righValue = packetPair.right.values.getOrNull(i)
-            if (leftValue is EmptyValue && righValue is EmptyValue) {
+            if (leftValue == righValue) {
                 continue
             }
-            if (leftValue is EmptyValue && righValue !is EmptyValue) {
+            if (isEmptyList(leftValue)) {
                 debug("left side ran out of items, returning true", 2)
                 return 1
             }
-            if (righValue == null || righValue is EmptyValue) {
+            if (righValue == null || isEmptyList(righValue)) {
                 debug("right side ran out of items, returning false", 2)
                 return -1
             }
@@ -101,7 +101,7 @@ fun parsePacketPair(inputLines: List<String>): PacketPair =
     PacketPair(parsePacket(inputLines[0]), parsePacket(inputLines[1]))
 
 fun part1(): Int {
-    val packetPairs = readTestInput("day13")
+    val packetPairs = readInput("day13")
         .chunked(3)
         .map { parsePacketPair(it) }
 
@@ -132,11 +132,7 @@ fun part2(): Int {
     return index1 * index2
 }
 
-fun debug(str: String, level: Int) {
-    println("${"  ".repeat(level)} $str")
-}
-
 fun main() {
-    check(part1() == 13)
-    check(part2() == 140)
+    equals(13, part1())
+    equals(140, part2())
 }

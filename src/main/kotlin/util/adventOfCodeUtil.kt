@@ -33,6 +33,16 @@ fun createDay(dayNum: Int) {
 
 }
 
+fun equals(expected: Number, actual: Number) {
+    if (expected != actual) throw IllegalStateException("Expected $expected, but was $actual")
+}
+
+fun debug(str: String, level: Int) {
+    println("${"  ".repeat(level)} $str")
+}
+
+
+
 fun main() {
     createDay(LocalDate.now().dayOfMonth)
 }
