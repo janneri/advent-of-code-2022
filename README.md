@@ -1,5 +1,7 @@
 # Advent of Code 2022
 
+I was too busy before Christmas to do these puzzles after day 16. It was fun to do the first 16! :) 
+
 | Puzzle                                                                   | Solution                                         | Themes                                                                               |
 |--------------------------------------------------------------------------|--------------------------------------------------|--------------------------------------------------------------------------------------|
 | [Day 1 - calory counting](https://adventofcode.com/2022/day/1)           | [Day 1 solution](src/main/kotlin/day1/main.kt)   | Group nums. Sum and find groups with max sum.                                        |
@@ -16,8 +18,8 @@
 | [Day 12 - hill climbing algorithm](https://adventofcode.com/2022/day/12) | [Day 12 solution](src/main/kotlin/day12/main.kt) | Find the  shortest path on a map.                                                    |
 | [Day 13 - distress signal](https://adventofcode.com/2022/day/13)         | [Day 13 solution](src/main/kotlin/day13/main.kt) | Implement a tokenizer/lexer/parser. Compare parsed values using a set of rules.      |
 | [Day 14 - sand in a cave](https://adventofcode.com/2022/day/14)          | [Day 14 solution](src/main/kotlin/day14/main.kt) | Simulate dropping sand in a cave. Same as moving based on rules on a map.            |
-| [Day 15 - todo](https://adventofcode.com/2022/day/15)                    | [Day 15 solution](src/main/kotlin/day15/main.kt) | TODO                                                                                 |
-| [Day 16 - todo](https://adventofcode.com/2022/day/16)                    | [Day 16 solution](src/main/kotlin/day16/main.kt) | TODO                                                                                 |
+| [Day 15 - beacon exclusion zone](https://adventofcode.com/2022/day/15)   | [Day 15 solution](src/main/kotlin/day15/main.kt) | Find gaps in IntRanges to find the coordinate which is not covered by a sensor.      |
+| [Day 16 - open valves in tunnels](https://adventofcode.com/2022/day/16)  | [Day 16 solution](src/main/kotlin/day16/main.kt) | Calculate distances in a map. Play a game of opening valves.                         |
 | [Day 17 - todo](https://adventofcode.com/2022/day/17)                    | [Day 17 solution](src/main/kotlin/day17/main.kt) | TODO                                                                                 |
 | [Day 18 - todo](https://adventofcode.com/2022/day/18)                    | [Day 18 solution](src/main/kotlin/day18/main.kt) | TODO                                                                                 |
 | [Day 19 - todo](https://adventofcode.com/2022/day/19)                    | [Day 19 solution](src/main/kotlin/day19/main.kt) | TODO                                                                                 |
