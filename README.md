@@ -1,6 +1,6 @@
 # Advent of Code 2022
 
-I was too busy before Christmas to do these puzzles after day 16. It was fun to do the first 16! :) 
+I was too busy before Christmas to do all the last puzzles. It was fun to do the first ones! :) 
 
 | Puzzle                                                                   | Solution                                         | Themes                                                                               |
 |--------------------------------------------------------------------------|--------------------------------------------------|--------------------------------------------------------------------------------------|
@@ -24,7 +24,7 @@ I was too busy before Christmas to do these puzzles after day 16. It was fun to 
 | [Day 18 - Boiling Boulders](https://adventofcode.com/2022/day/18)        | [Day 18 solution](src/main/kotlin/day18/main.kt) | Finally 3 dimensions                                                                 |
 | [Day 19 - todo](https://adventofcode.com/2022/day/19)                    | [Day 19 solution](src/main/kotlin/day19/main.kt) | TODO                                                                                 |
 | [Day 20 - todo](https://adventofcode.com/2022/day/20)                    | [Day 20 solution](src/main/kotlin/day20/main.kt) | TODO                                                                                 |
-| [Day 21 - todo](https://adventofcode.com/2122/day/21)                    | [Day 21 solution](src/main/kotlin/day21/main.kt) | TODO                                                                                 |
+| [Day 21 - Monkey Math](https://adventofcode.com/2022/day/21)             | [Day 21 solution](src/main/kotlin/day21/main.kt) | Math (addition, substraction, multiplication, division) logic                        |
 | [Day 22 - todo](https://adventofcode.com/2022/day/22)                    | [Day 22 solution](src/main/kotlin/day22/main.kt) | TODO                                                                                 |
 | [Day 23 - todo](https://adventofcode.com/2022/day/23)                    | [Day 23 solution](src/main/kotlin/day23/main.kt) | TODO                                                                                 |
 | [Day 24 - todo](https://adventofcode.com/2022/day/24)                    | [Day 24 solution](src/main/kotlin/day24/main.kt) | TODO                                                                                 |
