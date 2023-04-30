@@ -25,6 +25,8 @@ private enum class Direction(val dx: Int, val dy: Int, val symbol: Char, val fac
 
     abstract fun turnLeft(): Direction
     abstract fun turnRight(): Direction
+
+    fun turnOpposite() = turnLeft().turnLeft()
 }
 
 private data class Coord(val x: Int, val y: Int) {
@@ -89,7 +91,7 @@ private data class Grid(val inputLines: List<String>) {
             return null
         }
 
-        val oppositeDirection = direction.turnLeft().turnLeft()
+        val oppositeDirection = direction.turnOpposite()
         val jumpCoord = coord.moveUntil(oppositeDirection) { isOutOfGrid(it) || tileAt(it).tileType == BLANK }
         return if (tileAt(jumpCoord).tileType == WALL) null else jumpCoord
     }
