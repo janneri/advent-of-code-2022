@@ -28,4 +28,4 @@ I was too busy before Christmas to do all the last puzzles. It was fun to do the
 | [Day 22 - Monkey Map](https://adventofcode.com/2022/day/22)               | [Day 22 solution](src/main/kotlin/day22/main.kt) | Move and make turns on a grid. Jump/wrap around to the otherside if needed.          |
 | [Day 23 - Unstable Diffusion](https://adventofcode.com/2022/day/23)       | [Day 23 solution](src/main/kotlin/day23/main.kt) | Dance around a grid. Diagonal movement with pretty complex rules.                    |
 | [Day 24 - Blizzard Basin](https://adventofcode.com/2022/day/24)           | [Day 24 solution](src/main/kotlin/day24/main.kt) | Find a way through a maze. Another BFS with a twist, because the map changes.        |
-| [Day 25 - todo](https://adventofcode.com/2022/day/25)                     | [Day 25 solution](src/main/kotlin/day25/main.kt) | TODO                                                                                 |
+| [Day 25 - Full of Hot Air](https://adventofcode.com/2022/day/25)          | [Day 25 solution](src/main/kotlin/day25/main.kt) | Base 10 to base 5 number conversions with a twist.                                   |
