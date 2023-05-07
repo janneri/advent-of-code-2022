@@ -1,6 +1,6 @@
 package day19
 
-import util.readTestInput
+import util.readInput
 
 data class Robot(
     val oreCost: Int = 0,
@@ -127,13 +127,15 @@ fun play(states: Set<GameState>, blueprint: Blueprint): Set<GameState> =
         .flatMap { state -> getNextStates(state, blueprint) }
         // take the best states to keep the state-list smaller
         .toSortedSet()
-        .take(1000)
+        .take(10000)
         .toSet()
 
 fun main() {
-    val bluePrints = readTestInput("day19").map { Blueprint.of(it) }
-    val rounds = 24
+    val bluePrints = readInput("day19").map { Blueprint.of(it) }
     val debugPrint = false
+
+    // part 1 (24 minutes)
+    val rounds = 24
     val qualityLevels = bluePrints.map {bluePrint ->
         var states = setOf(GameState(oreRobotCount = 1))
         repeat(rounds) { minute ->
@@ -146,4 +148,21 @@ fun main() {
         qualityLevel
     }
     println("Overall quality: ${qualityLevels.sum()}")
+
+    // part 2 (32 minutes, but only 3 blueprints)
+    val part2Rounds = 32
+    val geodeCounts = bluePrints.take(3).map {bluePrint ->
+        var states = setOf(GameState(oreRobotCount = 1))
+        repeat(part2Rounds) { minute ->
+            if (debugPrint) println("Minute ${minute + 1} (states ${states.size})")
+            states = play(states, bluePrint)
+            if (debugPrint) println(states.take(5).joinToString("\n"))
+        }
+        val geodeCount = states.first().geode
+        println("Blueprint ${bluePrint.id}: $geodeCount")
+        geodeCount
+    }
+
+    println("Overall quality part2: ${geodeCounts.reduce {acc, i -> acc * i}}")
+
 }
